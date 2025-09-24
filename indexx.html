@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فلش‌کارت‌های مهندسی عمران</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            perspective: 1000px; /* Essential for the 3D flip effect */
+        }
+
+        .flashcard {
+            background-color: transparent;
+            width: 100%;
+            height: 200px;
+            cursor: pointer; /* Shows an interactive pointer on hover */
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        /* This is the class that the JavaScript toggles */
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* For Safari */
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: #2980b9;
+            font-size: 1.6em;
+            font-weight: bold;
+            direction: ltr; /* English text should be Left-to-Right */
+        }
+
+        .flashcard-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg); /* Pre-rotates the back panel */
+            font-size: 1.2em;
+            line-height: 1.8;
+            font-family: 'Vazirmatn', sans-serif;
+            direction: rtl; /* Persian text should be Right-to-Left */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏗️ فلش‌کارت‌های اصطلاحات مهندسی عمران</h1>
+        <div class="flashcard-grid">
+
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Foundation</div><div class="flashcard-back"><strong>پی (فونداسیون):</strong> بخشی از سازه که وظیفه انتقال بار ساختمان به زمین را بر عهده دارد.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Rebar (Reinforcing Bar)</div><div class="flashcard-back"><strong>میلگرد:</strong> میله فولادی که برای تقویت بتن و افزایش مقاومت کششی آن استفاده می‌شود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Beam</div><div class="flashcard-back"><strong>تیر:</strong> عضو افقی سازه که بارهای عمودی را تحمل کرده و به ستون‌ها منتقل می‌کند.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Column</div><div class="flashcard-back"><strong>ستون:</strong> عضو عمودی سازه که بارهای فشاری را از تیرها به فونداسیون منتقل می‌کند.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Concrete</div><div class="flashcard-back"><strong>بتن:</strong> ماده‌ای ترکیبی از سیمان، سنگدانه (شن و ماسه) و آب که پس از سخت شدن بسیار مقاوم می‌شود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Truss</div><div class="flashcard-back"><strong>خرپا:</strong> سازه‌ای متشکل از اعضای مثلثی شکل که برای پوشاندن دهانه‌های بزرگ (مانند سقف سوله) به کار می‌رود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Scaffolding</div><div class="flashcard-back"><strong>داربست:</strong> سازه موقتی فلزی یا چوبی که برای دسترسی کارگران به نقاط مختلف ساختمان در حین ساخت برپا می‌شود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Mortar</div><div class="flashcard-back"><strong>ملات:</strong> ماده خمیری (ترکیب سیمان، ماسه و آب) که برای چسباندن آجر، بلوک و سنگ به کار می‌رود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Blueprint</div><div class="flashcard-back"><strong>نقشه ساختمانی:</strong> طرح فنی و دقیق یک پروژه ساختمانی که جزئیات ابعاد، مواد و روش ساخت را نشان می‌دهد.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Façade</div><div class="flashcard-back"><strong>نما:</strong> وجه بیرونی و جلویی یک ساختمان که ظاهر آن را تشکیل می‌دهد.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Geotechnical Engineering</div><div class="flashcard-back"><strong>مهندسی ژئوتکنیک:</strong> شاخه‌ای از مهندسی عمران که به مطالعه خواص مکانیکی خاک و سنگ و طراحی پی‌ها می‌پردازد.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Tensile Strength</div><div class="flashcard-back"><strong>مقاومت کششی:</strong> حداکثر نیروی کششی که یک ماده می‌تواند قبل از شکستن تحمل کند.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Compressive Strength</div><div class="flashcard-back"><strong>مقاومت فشاری:</strong> حداکثر نیروی فشاری که یک ماده (مانند بتن) می‌تواند قبل از خرد شدن تحمل کند.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Formwork</div><div class="flashcard-back"><strong>قالب‌بندی:</strong> قالب‌های موقتی (چوبی، فلزی یا پلاستیکی) که بتن تازه در آن‌ها ریخته می‌شود تا شکل بگیرد.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Surveying</div><div class="flashcard-back"><strong>نقشه‌برداری:</strong> علم و فن اندازه‌گیری دقیق زوایا و فواصل برای تعیین موقعیت نقاط روی زمین و پیاده‌سازی نقشه‌ها.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Excavation</div><div class="flashcard-back"><strong>گودبرداری:</strong> عملیات خاک‌برداری و کندن زمین به منظور آماده‌سازی محل برای اجرای فونداسیون.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Shear Wall</div><div class="flashcard-back"><strong>دیوار برشی:</strong> دیوار بتن آرمه که برای مقابله با نیروهای جانبی مانند باد و زلزله در سازه طراحی می‌شود.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Cantilever</div><div class="flashcard-back"><strong>تیر طُرّه‌ای:</strong> تیری که یک سر آن در تکیه‌گاه گیر کرده و سر دیگر آن آزاد است (مانند بالکن).</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Aggregate</div><div class="flashcard-back"><strong>سنگدانه:</strong> مواد دانه‌ای مانند شن و ماسه که بخش اصلی حجم بتن و آسفالت را تشکیل می‌دهند.</div></div></div>
+            <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front">Load-bearing Wall</div><div class="flashcard-back"><strong>دیوار باربر:</strong> دیواری که علاوه بر وزن خود، بارهای وارده از سقف‌ها و طبقات بالایی را نیز تحمل می‌کند.</div></div></div>
+
+        </div>
+    </div>
+
+</body>
+</html>
